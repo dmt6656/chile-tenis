@@ -213,17 +213,151 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .lb-card{position:relative;display:block;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.5);transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .45s ease-out;will-change:transform}
 .lb-card.tilting{transition-duration:.12s}
 .lb-card img{animation:none}
-.glare{position:absolute;inset:0;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.4),rgba(255,255,255,0) 55%)}
+.glare{position:absolute;inset:0;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.18),rgba(255,255,255,0) 55%)}
 .tilting .glare{opacity:1}
 @media(prefers-reduced-motion:reduce){.lb-card{transition:none}}
+
+/* ===== ajustes para celular ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:clip;overflow-wrap:break-word;-webkit-tap-highlight-color:transparent}
+a,button,.chip,.g{touch-action:manipulation}
+img{max-width:100%;height:auto}
+.wrap{padding-left:max(1.25rem,env(safe-area-inset-left,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px))}
+.logo{flex:none;white-space:nowrap}
+.links{min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 .6rem,#000 calc(100% - 1.4rem),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 .6rem,#000 calc(100% - 1.4rem),transparent 100%);padding:0 1rem 0 .6rem;scroll-snap-type:x proximity}
+.links a{flex:none;scroll-snap-align:center;min-height:44px;display:inline-flex;align-items:center}
+.res-act .btn,.actions .btn{text-align:center}
+.contact dd a{color:inherit;font-weight:600}
+footer{padding-bottom:calc(1.75rem + env(safe-area-inset-bottom,0px))}
+
+@media(hover:none){
+  .row:hover{padding-left:0}
+  .btn:hover{transform:none;filter:none}
+  .chip:hover{transform:none}
+  .g:hover img{transform:none}
+}
+
+@media(max-width:700px){
+  body{font-size:1rem}
+  section{padding:3.25rem 0}
+  #aulas{padding-top:calc(3.25rem + 3.2rem)}
+  .kids{padding:2.75rem 0}
+  .bar-in{gap:.5rem;padding-top:.45rem;padding-bottom:.45rem}
+  .logo{font-size:1.2rem}
+  .logo i{width:1.05rem;height:1.05rem}
+  .links{gap:1.1rem}
+  .hero{padding:2rem 0 5rem}
+  .hero-grid{gap:2rem}
+  .hero h1{font-size:clamp(2.35rem,11vw,3.2rem);line-height:1.04}
+  .hero p{font-size:1.08rem;margin:1rem 0 1.5rem}
+  .actions{flex-direction:column;gap:.7rem}
+  .actions .btn{width:100%;padding:1rem 1.25rem}
+  .collage{height:clamp(300px,86vw,380px);margin:0 .25rem}
+  .seal{right:22%;width:88px;height:88px}
+  .stats{margin-top:3rem}
+  h2{font-size:clamp(1.7rem,8vw,2.2rem);max-width:none}
+  .lead{font-size:1.02rem}
+  .about{gap:2rem}
+  .ph{margin-right:14px}
+  .places li{padding:.85rem 0}
+  .places b{font-size:1.15rem}
+  .rows{margin-top:1.75rem}
+  .row{padding:1.25rem 0}
+  .row h3{font-size:1.3rem}
+  .row.feat h3::after{display:inline-block;margin:.35rem 0 0 .6rem}
+  .pick{padding:1.25rem 1rem;margin-top:2rem}
+  .pick-head h3{font-size:1.35rem}
+  .q{font-size:1.15rem}
+  .chips{gap:.6rem}
+  .pick .chips{flex-direction:column;align-items:stretch}
+  .chip{width:100%;min-height:48px;text-align:center;font-size:1.02rem}
+  .res{padding:1rem 1.1rem}
+  .res-act{flex-direction:column;align-items:stretch}
+  .res-act .btn{width:100%}
+  .redo{align-self:center}
+  .mosaic{gap:.5rem;grid-auto-rows:150px;margin-top:1.75rem}
+  .g span{font-size:.82rem;padding:1.4rem .6rem .5rem;line-height:1.25}
+  .kids .btn,.contact .btn{width:100%;text-align:center}
+  .kids ul{margin:1.5rem 0}
+  .steps{gap:1.5rem;margin-top:1.75rem}
+  .cta-row{gap:1.75rem;margin-top:2rem}
+  .contact .btn{font-size:1.1rem;padding:1rem 1.25rem}
+  .contact dl{grid-template-columns:1fr;gap:0}
+  .contact dt{margin-top:1rem;font-size:.88rem;opacity:.8}
+  .contact dd{font-size:1.05rem}
+  footer{padding-bottom:calc(5.5rem + env(safe-area-inset-bottom,0px))}
+  .fab{right:max(.9rem,env(safe-area-inset-right,0px));padding:.9rem 1.3rem;min-height:48px;display:inline-flex;align-items:center}
+  dialog{max-width:94vw;max-height:94vh;max-height:94dvh;margin:auto}
+  dialog img{max-height:78vh;max-height:78dvh}
+  dialog .x{top:.6rem;right:.6rem;background:rgba(5,12,30,.72);min-height:44px;padding:.3rem 1rem;z-index:2}
+}
+
+@media(max-width:400px){
+  .stats strong{font-size:1.05rem}
+  .stats>div{padding:.8rem .5rem}
+  .stats>div>span{font-size:.74rem;line-height:1.3}
+  .tag{font-size:.85rem}
+  .mosaic{grid-auto-rows:135px}
+}
+@media(max-width:340px){
+  .stats{grid-template-columns:1fr}
+  .stats>div{border-left:0;border-top:1px solid var(--line);padding:.8rem 1rem}
+  .stats>div:first-child{border-top:0}
+  .links a{font-size:.88rem}
+}
+@media(max-height:480px) and (orientation:landscape){
+  .hero{padding:1.5rem 0 4.5rem}
+  .collage{height:300px}
+  dialog img{max-height:80vh}
+}
+
+/* ===== menu suspenso (apenas celular) ===== */
+.menu-btn{display:none}
+@media(max-width:700px){
+  .menu-btn{display:block;position:relative;flex:none;width:46px;height:46px;margin-right:-.5rem;background:transparent;border:0;border-radius:12px;color:#fff;cursor:pointer}
+  .menu-btn span{position:absolute;left:12px;right:12px;height:2.5px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s,top .25s}
+  .menu-btn span:nth-child(1){top:16px}
+  .menu-btn span:nth-child(2){top:22px}
+  .menu-btn span:nth-child(3){top:28px}
+  .bar.open .menu-btn span:nth-child(1){top:22px;transform:rotate(45deg)}
+  .bar.open .menu-btn span:nth-child(2){opacity:0}
+  .bar.open .menu-btn span:nth-child(3){top:22px;transform:rotate(-45deg)}
+  .bar .links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;white-space:normal;overflow-x:visible;overflow-y:auto;max-height:calc(100vh - 4rem - env(safe-area-inset-top,0px));max-height:calc(100dvh - 4rem - env(safe-area-inset-top,0px));padding:.4rem max(1.25rem,env(safe-area-inset-right,0px)) calc(.9rem + env(safe-area-inset-bottom,0px)) max(1.25rem,env(safe-area-inset-left,0px));background:var(--court);border-top:1px solid rgba(255,255,255,.18);box-shadow:0 18px 30px rgba(0,0,0,.35);-webkit-mask-image:none;mask-image:none;scroll-snap-type:none;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility 0s .2s}
+  .bar.open .links{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s,visibility 0s}
+  .bar .links a{display:flex;width:100%;min-height:52px;padding:.4rem .25rem;font-size:1.1rem;color:rgba(255,255,255,.88);border-bottom:1px solid rgba(255,255,255,.14)}
+  .bar .links a:last-child{border-bottom:0}
+  .bar .links a.on{color:#fff;border-bottom-color:rgba(255,255,255,.14);box-shadow:inset 4px 0 0 #D52B1E;padding-left:.9rem}
+}
+@media(prefers-reduced-motion:reduce){.menu-btn span,.bar .links{transition:none!important}}
+
+/* botão flutuante do WhatsApp (ícone) */
+.fab{display:flex;align-items:center;justify-content:center;width:58px;height:58px;min-height:0;padding:0;border-radius:50%}
+.fab svg{display:block;width:32px;height:32px}
+
+/* animação do botão do WhatsApp */
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;animation:fabring 2.6s 1.2s infinite}
+.fab svg{animation:fabring-icon 5s 2s infinite;transform-origin:50% 60%}
+.fab.hide::after,.fab.hide svg{animation-play-state:paused}
+.fab:not(.hide):hover{transform:scale(1.08)}
+.fab:not(.hide):active{transform:scale(.94)}
+@keyframes fabring{0%{box-shadow:0 0 0 0 rgba(213,43,30,.7)}70%,100%{box-shadow:0 0 0 20px rgba(213,43,30,0)}}
+@keyframes fabring-icon{0%,55%,100%{transform:none}60%{transform:rotate(-14deg)}65%{transform:rotate(12deg)}70%{transform:rotate(-10deg)}75%{transform:rotate(8deg)}80%{transform:rotate(-4deg)}85%{transform:none}}
+@media(prefers-reduced-motion:reduce){.fab::after,.fab svg{animation:none!important}.fab:not(.hide):hover,.fab:not(.hide):active{transform:none}}
+
+/* botão da escolinha */
+.kids a.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;background:var(--ball);color:var(--ball-ink);border:0;padding:1rem 1.6rem;font-size:1.1rem;line-height:1.2;box-shadow:0 10px 22px rgba(213,43,30,.28)}
+.kids a.btn svg{width:1.5rem;height:1.5rem;flex:none}
+.kids a.btn:active{transform:scale(.98)}
+@media(hover:hover){.kids a.btn:hover{background:var(--ball);color:#fff;border-color:transparent;filter:brightness(.94);transform:translateY(-2px);box-shadow:0 14px 26px rgba(213,43,30,.34)}}
 </style>
 </head>
 <body>
-<a class="fab" href="https://wa.me/5541984260377?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20as%20aulas%20de%20t%C3%AAnis." target="_blank" rel="noopener">WhatsApp</a>
+<a class="fab" href="https://wa.me/5541984260377?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20as%20aulas%20de%20t%C3%AAnis." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 48 48" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M38.9,8.1A20.9,20.9,0,0,0,3.2,22.8,19.8,19.8,0,0,0,6,33.2L3,44l11.1-2.9a20.3,20.3,0,0,0,10,2.5A20.8,20.8,0,0,0,38.9,8.1Zm-14.8,32a17.1,17.1,0,0,1-9.5-2.8L8,39.1l1.8-6.4a17.9,17.9,0,0,1-3.1-9.9A17.4,17.4,0,1,1,24.1,40.1Z"/><path d="M33.6,27.2A29.2,29.2,0,0,0,30,25.5c-.4-.2-.8-.3-1.1.2s-1.4,1.7-1.7,2.1a.8.8,0,0,1-1.1.1,15.2,15.2,0,0,1-4.2-2.6A15,15,0,0,1,19,21.7a.7.7,0,0,1,.2-1l.8-1a3.5,3.5,0,0,0,.5-.8.9.9,0,0,0,0-.9c-.2-.3-1.2-2.8-1.6-3.9s-.9-.9-1.2-.9h-1a1.7,1.7,0,0,0-1.4.7,5.5,5.5,0,0,0-1.8,4.3,10.4,10.4,0,0,0,2.1,5.4c.3.3,3.7,5.6,8.9,7.8a16.4,16.4,0,0,0,3,1.1,6.4,6.4,0,0,0,3.3.2c1-.1,3.1-1.2,3.5-2.4s.5-2.3.3-2.5A2.1,2.1,0,0,0,33.6,27.2Z"/></svg></a>
 
 <header class="bar"><div class="wrap bar-in">
   <a class="logo" href="#"><i></i>Chile Tênis</a>
-  <nav class="links" aria-label="Seções"><a href="#aulas">Aulas</a><a href="#professor">Professor</a><a href="#quadras">Quadras</a><a href="#escolinha">Escolinha</a><a href="#contato">Contato</a></nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  <nav class="links" id="menu" aria-label="Seções"><a href="#aulas">Aulas</a><a href="#professor">Professor</a><a href="#quadras">Quadras</a><a href="#escolinha">Escolinha</a><a href="#contato">Contato</a></nav>
 </div></header>
 
 <section class="hero">
@@ -326,7 +460,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li>Fundamentos corretos desde o primeiro dia</li>
       <li>Evolução acompanhada de perto, com retorno para os pais</li>
     </ul>
-    <a class="btn" href="https://wa.me/5541984260377?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20a%20escolinha%20de%20t%C3%AAnis%20para%20meu%20filho." target="_blank" rel="noopener">Quero a escolinha para meu filho</a>
+    <a class="btn" href="https://wa.me/5541984260377?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20a%20escolinha%20de%20t%C3%AAnis%20para%20meu%20filho." target="_blank" rel="noopener"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true" focusable="false"><path d="M38.9,8.1A20.9,20.9,0,0,0,3.2,22.8,19.8,19.8,0,0,0,6,33.2L3,44l11.1-2.9a20.3,20.3,0,0,0,10,2.5A20.8,20.8,0,0,0,38.9,8.1Zm-14.8,32a17.1,17.1,0,0,1-9.5-2.8L8,39.1l1.8-6.4a17.9,17.9,0,0,1-3.1-9.9A17.4,17.4,0,1,1,24.1,40.1Z"/><path d="M33.6,27.2A29.2,29.2,0,0,0,30,25.5c-.4-.2-.8-.3-1.1.2s-1.4,1.7-1.7,2.1a.8.8,0,0,1-1.1.1,15.2,15.2,0,0,1-4.2-2.6A15,15,0,0,1,19,21.7a.7.7,0,0,1,.2-1l.8-1a3.5,3.5,0,0,0,.5-.8.9.9,0,0,0,0-.9c-.2-.3-1.2-2.8-1.6-3.9s-.9-.9-1.2-.9h-1a1.7,1.7,0,0,0-1.4.7,5.5,5.5,0,0,0-1.8,4.3,10.4,10.4,0,0,0,2.1,5.4c.3.3,3.7,5.6,8.9,7.8a16.4,16.4,0,0,0,3,1.1,6.4,6.4,0,0,0,3.3.2c1-.1,3.1-1.2,3.5-2.4s.5-2.3.3-2.5A2.1,2.1,0,0,0,33.6,27.2Z"/></svg><span>Quero a escolinha para meu filho</span></a>
   </div>
 </section>
 
@@ -344,8 +478,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="cta-row">
       <a class="btn" href="https://wa.me/5541984260377?text=Ol%C3%A1%21%20Quero%20marcar%20uma%20aula%20de%20t%C3%AAnis." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       <dl>
-        <dt>WhatsApp</dt><dd>(41) 98426-0377</dd>
-        <dt>Instagram</dt><dd>@chiletenis</dd>
+        <dt>WhatsApp</dt><dd><a href="tel:+5541984260377">(41) 98426-0377</a></dd>
+        <dt>Instagram</dt><dd><a href="https://instagram.com/chiletenis" target="_blank" rel="noopener">@chiletenis</a></dd>
         <dt>Atendimento</dt><dd>Em Curitiba: Ecoville, Mossunguê, São Braz e Santa Felicidade</dd>
       </dl>
     </div>
@@ -363,7 +497,8 @@ if('IntersectionObserver' in window&&!rm){var io=new IntersectionObserver(functi
 if(!rm){d.querySelectorAll('[data-n]').forEach(function(el){var n=+el.dataset.n,t0=null;el.textContent=0;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)});
 var c=d.querySelector('.hero svg.court'),a=d.querySelector('.andes'),tk=false;
 addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){var y=scrollY;if(y<900){c.style.transform='translateY('+y*.15+'px)';a.style.transform='translateY('+y*.06+'px)'}tk=false})},{passive:true})}
-var links=d.querySelectorAll('.links a');
+var links=d.querySelectorAll('.links a'),nav=d.querySelector('.links');
+function center(a){if(!nav||nav.scrollWidth<=nav.clientWidth)return;nav.scrollTo({left:a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2,behavior:rm?'auto':'smooth'})}
 var Qs={kid:['Qual a idade da criança?',['Até 6 anos','7 a 10 anos','11 anos ou mais'],'idade'],me:['Você tem quadra de tênis disponível?',['Sim, tenho','Não tenho'],'quadra'],group:['Qual o nível do grupo?',['Nunca jogaram','Já jogam um pouco','Jogam bem'],'nível']};
 var R={
 kid0:['kid','Escolinha para crianças','Nessa idade o mais importante é gostar de estar na quadra. A aula é feita de brincadeiras com bola que trabalham coordenação e equilíbrio.',['Turmas pequenas e atividades curtas','Aprender brincando, sem pressão']],
@@ -395,7 +530,7 @@ var lb=d.getElementById('lb'),li=lb.querySelector('img');
 d.querySelectorAll('.g').forEach(function(b){b.addEventListener('click',function(){var im=b.querySelector('img');li.src=im.src;li.alt=im.alt;lb.showModal()})});
 lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('x'))lb.close()});
 if('IntersectionObserver' in window){
-var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+x.target.id;a.classList.toggle('on',on);if(on)center(a)})}})},{rootMargin:'-40% 0px -55% 0px'});
 d.querySelectorAll('main>section').forEach(function(s){so.observe(s)});
 var fab=d.querySelector('.fab'),st=[false,false],fo=new IntersectionObserver(function(es){es.forEach(function(x){st[x.target.classList.contains('hero')?0:1]=x.isIntersecting});fab.classList.toggle('hide',st[0]||st[1])});
 fo.observe(d.querySelector('.hero'));fo.observe(d.getElementById('contato'))}
@@ -406,6 +541,14 @@ card.style.setProperty('--ry',((x-.5)*2*10).toFixed(2)+'deg');card.style.setProp
 card.style.setProperty('--mx',(x*100).toFixed(1)+'%');card.style.setProperty('--my',(y*100).toFixed(1)+'%');card.classList.add('tilting')});
 card.addEventListener('pointerleave',function(){card.classList.remove('tilting');card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg')});
 lb.addEventListener('close',function(){card.classList.remove('tilting');card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg')})}
+var bar=d.querySelector('.bar'),mb=d.querySelector('.menu-btn'),mq=matchMedia('(max-width:700px)');
+function setMenu(o){bar.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')}
+mb.addEventListener('click',function(){setMenu(!bar.classList.contains('open'))});
+links.forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+d.querySelector('.logo').addEventListener('click',function(){setMenu(false)});
+d.addEventListener('click',function(e){if(bar.classList.contains('open')&&!bar.contains(e.target))setMenu(false)});
+d.addEventListener('keydown',function(e){if(e.key==='Escape'&&bar.classList.contains('open')){setMenu(false);mb.focus()}});
+(mq.addEventListener?mq.addEventListener('change',function(){setMenu(false)}):mq.addListener(function(){setMenu(false)}));
 })();
 </script>
 </body>
